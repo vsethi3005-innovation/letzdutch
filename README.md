@@ -22,15 +22,19 @@ cd apps/consumer
 flutter run                 # runs on demo data
 ```
 
-To run against Supabase:
+To run against the live Supabase project (sign-in required):
 
 ```sh
-flutter run \
-  --dart-define=SUPABASE_URL=https://<project>.supabase.co \
-  --dart-define=SUPABASE_ANON_KEY=<publishable key>
+flutter run --dart-define-from-file=env/dev.json
 ```
 
-Apply the schema with the Supabase CLI: `supabase db push`.
+`env/dev.json` holds the project URL and the publishable key, which are safe to ship in the app. Never put the secret/service_role key in this repo.
+
+### Supabase setup (one time)
+
+1. In the Supabase dashboard, open **SQL Editor**, paste `supabase/migrations/20261101000000_init.sql` and run it. Then do the same with `supabase/seed.sql` for sample venues.
+2. Turn on phone sign-in under **Authentication → Sign In / Providers → Phone**, and connect an SMS provider (Twilio, MessageBird or Vonage).
+3. While testing, add test numbers with fixed codes in the same Phone settings, so no SMS is sent.
 
 ## Tests
 

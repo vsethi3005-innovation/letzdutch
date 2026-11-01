@@ -156,4 +156,36 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get demoMode => 'بيانات تجريبية: اربط Supabase للتشغيل الفعلي';
+
+  @override
+  String get signInTitle => 'مرحبًا بك في ليتزدتش';
+
+  @override
+  String get signInSubtitle => 'أدخل رقم هاتفك المحمول وسنرسل لك رمزًا.';
+
+  @override
+  String get phoneNumber => 'رقم الهاتف المحمول';
+
+  @override
+  String get sendCode => 'أرسل الرمز';
+
+  @override
+  String enterCode(String phone) {
+    return 'أدخل الرمز المكوّن من 6 أرقام المرسل إلى $phone';
+  }
+
+  @override
+  String get verify => 'تحقق';
+
+  @override
+  String get changeNumber => 'غيّر الرقم';
+
+  @override
+  String get invalidPhone => 'أدخل رقم هاتف إماراتي صحيحًا';
+
+  @override
+  String get signOut => 'تسجيل الخروج';
+
+  @override
+  String get guest => 'ضيف';
 }

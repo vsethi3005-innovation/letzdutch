@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
+
+import 'config.dart';
+import 'features/auth/sign_in_screen.dart';
 
 import 'features/discover/discover_screen.dart';
 import 'features/discover/venue_screen.dart';
@@ -9,9 +13,33 @@ import 'features/table/table_screen.dart';
 import 'features/wallet/wallet_screen.dart';
 import 'l10n/app_localizations.dart';
 
+/// Re-runs the router's redirect when the user signs in or out.
+class _AuthRefresh extends ChangeNotifier {
+  _AuthRefresh() {
+    if (AppConfig.hasBackend) {
+      Supabase.instance.client.auth.onAuthStateChange.listen(
+        (_) => notifyListeners(),
+      );
+    }
+  }
+}
+
+/// With a backend configured, every screen except sign-in needs a session.
+String? _authRedirect(BuildContext context, GoRouterState state) {
+  if (!AppConfig.hasBackend) return null;
+  final signedIn = Supabase.instance.client.auth.currentSession != null;
+  final onSignIn = state.matchedLocation == '/sign-in';
+  if (!signedIn && !onSignIn) return '/sign-in';
+  if (signedIn && onSignIn) return '/discover';
+  return null;
+}
+
 final appRouter = GoRouter(
   initialLocation: '/discover',
+  refreshListenable: _AuthRefresh(),
+  redirect: _authRedirect,
   routes: [
+    GoRoute(path: '/sign-in', builder: (_, _) => const SignInScreen()),
     StatefulShellRoute.indexedStack(
       builder: (context, state, shell) => _HomeShell(shell: shell),
       branches: [

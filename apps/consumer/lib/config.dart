@@ -1,10 +1,9 @@
-/// Build-time configuration, passed with `--dart-define`.
+/// Build-time configuration, passed with `--dart-define-from-file`.
 ///
 /// ```
-/// flutter run --dart-define=SUPABASE_URL=https://xyz.supabase.co \
-///             --dart-define=SUPABASE_ANON_KEY=...
+/// flutter run --dart-define-from-file=env/dev.json
 /// ```
-/// Without them the app runs on built-in demo data.
+/// Without it the app runs on built-in demo data with no sign-in.
 class AppConfig {
   static const supabaseUrl = String.fromEnvironment('SUPABASE_URL');
   static const supabaseAnonKey = String.fromEnvironment('SUPABASE_ANON_KEY');

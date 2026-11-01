@@ -156,4 +156,37 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get demoMode => 'Demo data: connect Supabase to go live';
+
+  @override
+  String get signInTitle => 'Welcome to Letzdutch';
+
+  @override
+  String get signInSubtitle =>
+      'Enter your mobile number and we\'ll text you a code.';
+
+  @override
+  String get phoneNumber => 'Mobile number';
+
+  @override
+  String get sendCode => 'Send code';
+
+  @override
+  String enterCode(String phone) {
+    return 'Enter the 6-digit code sent to $phone';
+  }
+
+  @override
+  String get verify => 'Verify';
+
+  @override
+  String get changeNumber => 'Change number';
+
+  @override
+  String get invalidPhone => 'Enter a valid UAE mobile number';
+
+  @override
+  String get signOut => 'Sign out';
+
+  @override
+  String get guest => 'Guest';
 }
