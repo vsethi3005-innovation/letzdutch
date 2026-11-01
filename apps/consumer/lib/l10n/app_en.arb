@@ -9,7 +9,13 @@
   "openNow": "Open now",
   "closed": "Closed",
   "waitMinutes": "{minutes} min wait",
-  "@waitMinutes": {"placeholders": {"minutes": {"type": "int"}}},
+  "@waitMinutes": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
   "valet": "Valet",
   "happyHour": "Happy hour",
   "todaysSpecials": "Today's specials",
@@ -18,9 +24,21 @@
   "startTable": "Start a table",
   "yourTable": "Your table",
   "tableLabel": "Table {label}",
-  "@tableLabel": {"placeholders": {"label": {"type": "String"}}},
+  "@tableLabel": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
   "readyIn": "Ready in about {minutes} min",
-  "@readyIn": {"placeholders": {"minutes": {"type": "int"}}},
+  "@readyIn": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
   "emptyOrder": "Nothing ordered yet. Add items from the menu.",
   "subtotal": "Subtotal",
   "vat": "VAT (5%)",
@@ -40,9 +58,21 @@
   "eventTitle": "Event name",
   "budget": "Budget",
   "perGuest": "{amount} per guest",
-  "@perGuest": {"placeholders": {"amount": {"type": "String"}}},
+  "@perGuest": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
   "guestsGoing": "{count} going",
-  "@guestsGoing": {"placeholders": {"count": {"type": "int"}}},
+  "@guestsGoing": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "save": "Save",
   "youOwe": "You owe",
   "owedToYou": "Owed to you",
@@ -50,5 +80,22 @@
   "recentActivity": "Recent activity",
   "language": "Language",
   "membership": "Membership",
-  "demoMode": "Demo data: connect Supabase to go live"
+  "demoMode": "Demo data: connect Supabase to go live",
+  "signInTitle": "Welcome to Letzdutch",
+  "signInSubtitle": "Enter your mobile number and we'll text you a code.",
+  "phoneNumber": "Mobile number",
+  "sendCode": "Send code",
+  "enterCode": "Enter the 6-digit code sent to {phone}",
+  "@enterCode": {
+    "placeholders": {
+      "phone": {
+        "type": "String"
+      }
+    }
+  },
+  "verify": "Verify",
+  "changeNumber": "Change number",
+  "invalidPhone": "Enter a valid UAE mobile number",
+  "signOut": "Sign out",
+  "guest": "Guest"
 }

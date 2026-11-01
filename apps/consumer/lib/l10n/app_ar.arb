@@ -45,5 +45,15 @@
   "recentActivity": "النشاط الأخير",
   "language": "اللغة",
   "membership": "العضوية",
-  "demoMode": "بيانات تجريبية: اربط Supabase للتشغيل الفعلي"
+  "demoMode": "بيانات تجريبية: اربط Supabase للتشغيل الفعلي",
+  "signInTitle": "مرحبًا بك في ليتزدتش",
+  "signInSubtitle": "أدخل رقم هاتفك المحمول وسنرسل لك رمزًا.",
+  "phoneNumber": "رقم الهاتف المحمول",
+  "sendCode": "أرسل الرمز",
+  "enterCode": "أدخل الرمز المكوّن من 6 أرقام المرسل إلى {phone}",
+  "verify": "تحقق",
+  "changeNumber": "غيّر الرقم",
+  "invalidPhone": "أدخل رقم هاتف إماراتي صحيحًا",
+  "signOut": "تسجيل الخروج",
+  "guest": "ضيف"
 }
