@@ -1,0 +1,26 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+      - run: flutter pub get
+      - name: Analyze
+        working-directory: apps/consumer
+        run: flutter analyze
+      - name: Core tests
+        working-directory: packages/letz_core
+        run: dart test
+      - name: App tests
+        working-directory: apps/consumer
+        run: flutter test
